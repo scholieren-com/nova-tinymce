@@ -20,7 +20,7 @@ class NovaTinyMCE extends Field
      */
     public $component = 'Nova-TinyMCE';
 
-    public function __construct(string $name, $attribute = null, callable $resolveCallback = null)
+    public function __construct(string $name, $attribute = null, ?callable $resolveCallback = null)
     {
         parent::__construct($name, $attribute, $resolveCallback);
 
@@ -29,7 +29,7 @@ class NovaTinyMCE extends Field
         ]);
     }
 
-    public function asHtml(bool $asHtml = true)
+    public function asHtml(bool $asHtml = true): static
     {
         $this->asHtml = $asHtml;
 
@@ -42,9 +42,9 @@ class NovaTinyMCE extends Field
      * to view the list of all the available options.
      *
      * @param  array  $options
-     * @return self
+     * @return static
      */
-    public function options(array $options)
+    public function options(array $options): static
     {
         $currentOptions = $this->meta['options'];
 
@@ -56,9 +56,10 @@ class NovaTinyMCE extends Field
     /**
      * Set the field id html attribute.
      *
-     * @return $this
+     * @param $id
+     * @return static
      */
-    public function id($id)
+    public function id($id): static
     {
         $this->withMeta([
             'id' => $id,

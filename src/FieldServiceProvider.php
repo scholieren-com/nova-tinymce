@@ -2,19 +2,17 @@
 
 namespace Emilianotisato\NovaTinyMCE;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
-use Illuminate\Support\ServiceProvider;
 use Emilianotisato\NovaTinyMCE\Console\SupportFileManagerCommand;
+use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 
 class FieldServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->publishes([
             realpath(__DIR__ . '/../dist/tinymce') => public_path('vendor/tinymce'),
@@ -41,10 +39,8 @@ class FieldServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/nova-tinymce.php', 'nova-tinymce');
     }

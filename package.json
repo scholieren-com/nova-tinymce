@@ -12,8 +12,7 @@
   },
   "devDependencies": {
     "@tinymce/tinymce-vue": "^5.0.0",
-    "@vue/compiler-sfc": "^3.2.41",
-    "form-backend-validation": "^2.4.0",
+    "@vue/compiler-sfc": "^3.5.0",
     "laravel-mix": "^6.0.49",
     "lodash": "^4.17.21",
     "postcss": "^8.4.18",

@@ -23,21 +23,9 @@ class SupportFileManagerCommand extends Command
     protected $description = 'Fix lfm index.php file among others files.';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
-     *
-     * @return mixed
      */
-    public function handle()
+    public function handle(): int
     {
         $this->info('Fixing Filemanager files...');
 
@@ -61,5 +49,7 @@ class SupportFileManagerCommand extends Command
         );
 
         $this->info("Installation was successful!" . PHP_EOL);
+
+        return self::SUCCESS;
     }
 }
